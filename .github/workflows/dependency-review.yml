@@ -7,8 +7,13 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v6
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v4.9.0
+        with:
+          comment-summary-in-pr: always
