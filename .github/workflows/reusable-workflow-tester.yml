@@ -1,0 +1,10 @@
+name: Renovate
+
+on:
+  workflow_dispatch:
+
+jobs:
+  do-work:
+    uses: magnusp-org/simple-versioned-reusable-workflow/.github/workflows/reusable-hello-world.yml@v1.0.0
+    permissions:
+      contents: read
