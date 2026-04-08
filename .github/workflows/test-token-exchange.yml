@@ -25,7 +25,7 @@ jobs:
       - name: Request installation token
         id: exchange
         env:
-          TOKENHOST: ${vars.TOKENHOST}
+          TOKENHOST: ${{ vars.TOKENHOST }}
         run: |
           RESPONSE=$(curl -sf -X POST https://$TOKENHOST/token \
             -H "Authorization: Bearer ${{ steps.oidc.outputs.result }}" \
